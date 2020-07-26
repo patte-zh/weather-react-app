@@ -1,0 +1,11 @@
+.footer {
+  text-align: center;
+  display: block;
+  margin: 0, auto;
+  color: grey;
+  font-size: 10px;
+  padding-top: 0;
+}
+button {
+  box-shadow: 5px 5px 15px #abecd6;
+}

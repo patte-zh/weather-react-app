@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
 
-function App() {
+import Footer from "./Footer";
+import Search from "./Search";
+import Temperature from "./Temperature";
+
+import "./App.css";
+
+export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1 className="date"> Monday, 13:05 </h1>
+      <h2 className="city"> Porto </h2>
+      <Temperature />
+      <br />
+      <h3>Clear sky</h3>
+      <img src="" alt="" id="icon" />
+      <hr />
+      <Search />
+      <br />
+      <div className="row" id="forecast" />
+      <Footer />
     </div>
   );
 }
-
-export default App;
