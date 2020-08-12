@@ -1,5 +1,4 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.css";
 export default function Search() {
   return (
     <div>
@@ -12,6 +11,7 @@ export default function Search() {
               type="text"
               placeholder="enter a city..."
               autoComplete="off"
+              autoFocus="on"
             />
           </div>
           <div className="col-3">

@@ -2,6 +2,7 @@ import React from "react";
 
 import Footer from "./Footer";
 import Search from "./Search";
+import "bootstrap/dist/css/bootstrap.css";
 import ReactAnimatedWeather from "react-animated-weather";
 import Temperature from "./Temperature";
 
@@ -17,8 +18,9 @@ export default function App() {
         color="goldenrod"
         size={84}
         animate="true"
+        horizontal-align="middle"
       />
-      <Temperature />
+      <Temperature defaultCity="Porto" />
       <br />
       <h3>Clear sky</h3>
       <img src="" alt="" id="icon" />
