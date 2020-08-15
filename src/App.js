@@ -11,16 +11,16 @@ import "./App.css";
 export default function App() {
   return (
     <div className="App">
-      <h1 className="date"> Monday, 13:05 </h1>
-      <h2 className="city"> Porto </h2>
-      <ReactAnimatedWeather
-        icon="CLEAR_DAY"
-        color="goldenrod"
-        size={84}
-        animate="true"
-        horizontal-align="middle"
-      />
-      <Temperature defaultCity="Porto" />
+      <h2 className="city"> {} </h2>
+      <div className="icon">
+        <ReactAnimatedWeather
+          icon="CLEAR_DAY"
+          color="goldenrod"
+          size={84}
+          animate="true"
+        />
+      </div>
+      <Temperature defaultCity="Lisbon" />
       <br />
       <h3>Clear sky</h3>
       <img src="" alt="" id="icon" />

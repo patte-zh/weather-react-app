@@ -29,3 +29,9 @@
   color: rgba(128, 128, 128, 0.625);
   padding-bottom: 40px;
 }
+.App div .icon {
+  display: block;
+  text-align: center;
+  position: relative;
+  left: 20px;
+}

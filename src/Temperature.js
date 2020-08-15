@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./temperature.css";
+import RealDate from "./RealDate";
 
 export default function Temperature(props) {
   const [temperatureData, setTemperatureData] = useState({ ready: false });
@@ -20,6 +21,10 @@ export default function Temperature(props) {
   if (temperatureData.ready) {
     return (
       <div>
+        <h1 className="date">
+          {" "}
+          <RealDate date={temperatureData.date} />{" "}
+        </h1>
         <span className="tempDegrees" id="temperature">
           {temperatureData.temperature}{" "}
         </span>
