@@ -3,7 +3,7 @@ import axios from "axios";
 import "./temperature.css";
 import RealDate from "./RealDate";
 import Search from "./Search";
-
+import WeatherIcon from "./WeatherIcon";
 export default function Temperature(props) {
   const [temperatureData, setTemperatureData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
@@ -18,6 +18,7 @@ export default function Temperature(props) {
       city: response.data.name,
       description: response.data.weather[0].description,
       date: new Date(response.data.dt * 1000),
+      icon: response.data.weather[0].icon,
     });
   }
 
@@ -29,6 +30,11 @@ export default function Temperature(props) {
           <RealDate date={temperatureData.date} />{" "}
         </h1>
         <h2>{temperatureData.city} </h2>
+        <WeatherIcon
+          code={temperatureData.icon}
+          alt={temperatureData.description}
+        />
+
         <span className="tempDegrees" id="temperature">
           {temperatureData.temperature}{" "}
         </span>
