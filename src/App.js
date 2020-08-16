@@ -11,7 +11,6 @@ import "./App.css";
 export default function App() {
   return (
     <div className="App">
-      <h2 className="city"> {} </h2>
       <div className="icon">
         <ReactAnimatedWeather
           icon="CLEAR_DAY"
@@ -20,12 +19,7 @@ export default function App() {
           animate="true"
         />
       </div>
-      <Temperature defaultCity="Lisbon" />
-      <br />
-      <h3>Clear sky</h3>
-      <img src="" alt="" id="icon" />
-      <hr />
-      <Search />
+      <Temperature defaultCity="Porto" />
       <br />
       <div className="row" id="forecast" />
       <Footer />

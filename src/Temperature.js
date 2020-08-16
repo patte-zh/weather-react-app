@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./temperature.css";
 import RealDate from "./RealDate";
+import Search from "./Search";
 
 export default function Temperature(props) {
   const [temperatureData, setTemperatureData] = useState({ ready: false });
+  const [city, setCity] = useState(props.defaultCity);
+
   function handleInput(response) {
     console.log(response.data);
     setTemperatureData({
@@ -25,6 +28,7 @@ export default function Temperature(props) {
           {" "}
           <RealDate date={temperatureData.date} />{" "}
         </h1>
+        <h2>{temperatureData.city} </h2>
         <span className="tempDegrees" id="temperature">
           {temperatureData.temperature}{" "}
         </span>
@@ -44,13 +48,17 @@ export default function Temperature(props) {
         <div className="wind" id="wind">
           wind: {temperatureData.wind} km/h
         </div>
+        <br />
+        <h3>{temperatureData.description} </h3>
+        <img src="" alt="" id="icon" />
+        <hr />
+        <Search city={temperatureData.city} />
       </div>
     );
   } else {
     const apiKey = "9cd8a2246f79707c08b7050e7b412588";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleInput);
-
     return "Loading...";
   }
 }
