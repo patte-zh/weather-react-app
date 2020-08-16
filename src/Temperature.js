@@ -4,6 +4,8 @@ import "./temperature.css";
 import RealDate from "./RealDate";
 import Search from "./Search";
 import WeatherIcon from "./WeatherIcon";
+import WeatherUnits from "./WeatherUnits";
+
 export default function Temperature(props) {
   const [temperatureData, setTemperatureData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
@@ -34,25 +36,14 @@ export default function Temperature(props) {
           code={temperatureData.icon}
           alt={temperatureData.description}
         />
+        <WeatherUnits code={temperatureData.temperature} />
 
-        <span className="tempDegrees" id="temperature">
-          {temperatureData.temperature}{" "}
-        </span>
-        <span className="temp-celcius">
-          <a href="`#`" id="celsius-link">
-            ºC
-          </a>{" "}
-          |
-          <a href="`#`" id="fahrenheit-link">
-            ºF
-          </a>
-        </span>
         <p id="description" />
         <div className="humidity" id="humidity">
           humidity: {temperatureData.humidity} %
         </div>
         <div className="wind" id="wind">
-          wind: {temperatureData.wind} km/h
+          wind: {Math.round(temperatureData.wind)} km/h
         </div>
         <br />
         <h3>{temperatureData.description} </h3>

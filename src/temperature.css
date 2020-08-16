@@ -7,17 +7,3 @@
   font-weight: lighter;
   list-style: none;
 }
-
-.tempDegrees {
-  display: block;
-  color: grey;
-  text-align: center;
-  font-size: 60px;
-}
-
-.temp-celcius,
-.temp-fahr {
-  display: block;
-  text-align: center;
-  font-size: 12px;
-}
