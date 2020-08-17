@@ -7,7 +7,7 @@ export default function Search(props) {
   function handleInput(response) {
     setTemperatureData({
       ready: true,
-      city: response.data.name,
+      city: props.city,
     });
   }
 
@@ -45,6 +45,7 @@ export default function Search(props) {
               type="button"
               id="button-search"
               className="btn btn-outline-info"
+              onclick={newCity}
             >
               search
             </button>

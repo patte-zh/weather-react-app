@@ -22,22 +22,20 @@ export default function WeatherUnits(props) {
   function fahrenheitUnits(event) {
     event.preventDefault();
     setUnits("fahrenheit");
-    search();
   }
   function celsiusUnits(event) {
     event.preventDefault();
     setUnits("celsius");
-    search();
   }
 
   function fahrenheit() {
-    return props.temperature * 9 + 32;
+    return (props.celsius * 9) / 5 + 32;
   }
 
-  if (units === `celsius`) {
+  if (units === "celsius") {
     return (
       <div>
-        <span className="tempDegrees">{props.temperature} </span>
+        <div className="tempDegrees">{props.celsius} </div>
         <span className="temp-celsius">
           ºC |
           <a href="`#`" onClick={fahrenheitUnits}>
@@ -49,7 +47,7 @@ export default function WeatherUnits(props) {
   } else {
     return (
       <div>
-        <span className="tempDegrees">{props.temperature} </span>
+        <div className="tempDegrees">{(props.celsius * 9) / 5 + 32} </div>
         <span className="temp-fahr">{fahrenheit()} </span>
         <a href="`#`" onClick={celsiusUnits}>
           ºC

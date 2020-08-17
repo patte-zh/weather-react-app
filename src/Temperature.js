@@ -36,7 +36,7 @@ export default function Temperature(props) {
           code={temperatureData.icon}
           alt={temperatureData.description}
         />
-        <WeatherUnits code={temperatureData.temperature} />
+        <WeatherUnits celsius={temperatureData.temperature} />
 
         <p id="description" />
         <div className="humidity" id="humidity">
