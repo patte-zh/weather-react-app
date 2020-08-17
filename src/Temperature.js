@@ -32,10 +32,7 @@ export default function Temperature(props) {
           <RealDate date={temperatureData.date} />{" "}
         </h1>
         <h2>{temperatureData.city} </h2>
-        <WeatherIcon
-          code={temperatureData.icon}
-          alt={temperatureData.description}
-        />
+        <WeatherIcon code={temperatureData.icon} />
         <WeatherUnits celsius={temperatureData.temperature} />
 
         <p id="description" />

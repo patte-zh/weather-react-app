@@ -7,18 +7,6 @@ export default function WeatherUnits(props) {
   const [temperatureData, setTemperatureData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
 
-  function handleInput(response) {
-    setTemperatureData({
-      ready: true,
-      city: response.data.name,
-      temperature: Math.round(response.data.main.temp),
-    });
-  }
-  function search() {
-    const apiKey = "9cd8a2246f79707c08b7050e7b412588";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(handleInput);
-  }
   function fahrenheitUnits(event) {
     event.preventDefault();
     setUnits("fahrenheit");

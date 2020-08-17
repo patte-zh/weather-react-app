@@ -45,7 +45,7 @@ export default function Search(props) {
               type="button"
               id="button-search"
               className="btn btn-outline-info"
-              onclick={newCity}
+              onClick={newCity}
             >
               search
             </button>
