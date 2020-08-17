@@ -6,7 +6,6 @@ export default function Footer() {
     <div className="footer">
       <a
         href="https://github.com/patte-zh/weather-react-app"
-        id="openSource"
         target="_blank"
         rel="noopener noreferrer"
       >
